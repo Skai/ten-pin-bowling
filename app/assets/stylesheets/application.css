@@ -1,0 +1,198 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}fieldset,img{border:0;}img,object,embed{vertical-align:bottom;}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;}ol,ul{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;}q:before,q:after{content:'';}a *{cursor:pointer;}
+*:focus {outline: 0;}
+html{
+	background:#fff;
+	min-width: 960px;
+	height: 100%;
+}
+*,
+*:after,
+*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.cfx:before,
+.cfx:after {
+	content: " ";
+	display: table;
+}
+.cfx:after {
+	clear: both;
+}
+a{
+	color:#0d0d0d;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration: underline;
+}
+body{
+	min-height: 100%;
+	background-color: #fff; 
+	background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .1em, transparent .1em);
+	background-size: 100% 1.2em;
+	color: #0d0d0d;
+	font: 300 26px/1.2 'Indie Flower', cursive;
+}
+.wrapper{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 37px 0;
+}
+.wrapper h1,
+#notice{
+	margin: 20px 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 40px;
+	color: #146a2c;
+}
+#notice:empty{
+	margin: 0;
+}
+.score-calculator{
+	margin: 28px 0 15px;
+}
+.wrapper table{
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #000;
+	margin: 0 0 20px;
+}
+.wrapper table td{
+	padding: 15px 0;
+}
+.result-table td{
+	border: 1px solid #000;
+}
+.calc-score-table .score{
+	width: 4%;
+}
+.wrapper table thead{
+	text-align: center;
+	background: #bdbbb9;
+	font-size: 22px;
+}
+.game-list td,
+.wrapper table thead td,
+.wrapper table thead th,
+.calc-score-table .score:nth-child(even){
+	border: 1px solid #000;
+	text-align: center;
+	padding: 9px 15px;
+}
+.calc-score-table .score.add{
+	border: 1px solid #000;
+	border-width: 0 1px 1px 0;
+	padding: 10px 9px 9px 10px;
+}
+.calc-score-table .frame{
+	border: 1px solid #000;
+	border-width: 0 1px;
+	padding: 10px 9px;
+}
+.calc-buttons-container .row{
+	margin: 0 0 20px;
+	text-align: center;
+}
+.calc-buttons-container .row:last-child{
+	margin: 30px 0 10px;
+}
+.calc-buttons-container input[type='submit'],
+.calc-buttons-container .row a,
+.new_game input[type='submit']{
+	margin: 0 0 0 1%;
+	position: relative;
+	color: rgba(255,255,255,1);
+	text-decoration: none;
+	background-color: rgba(219,87,5,1);
+	font-size: 22px;
+	display: inline-block;
+	padding: 4px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 6px 5px rgba(0,0,0,.7);
+	-moz-box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 6px 5px rgba(0,0,0,.7);
+	box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 6px 5px rgba(0,0,0,.7);
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	min-width: 30px;
+	width: 7%;
+	font-family: 'Indie Flower', cursive;
+}
+.new_game input[type='submit']{
+	width: auto;
+}
+.calc-buttons-container input[type='submit']:active,
+.calc-buttons-container .row a:active,
+.new_game input[type='submit']:active{
+	-webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	position: relative;
+	top: 3px;
+}
+.calc-buttons-container input[type='submit']:first-child{
+	margin: 0;
+}
+.calc-buttons-container .row a{
+	width: 30%;
+	padding: 5px 0;
+	font-size: 26px;
+}
+.new_game {
+	margin: 0 auto 43px;
+	width: 550px;
+}
+.new_game .field{
+	float: left;
+}
+.new_game .field label{
+	float: left;
+	margin: 5px 20px 0 0;
+}
+.new_game .field input[type='text']{
+	float: left;
+	margin: 0 10px 0 0;
+	font: 300 26px/1.2 'Indie Flower', cursive;
+	font-weight: normal;
+	border: 1px solid #c4c4c4; 
+	width: 300px; 
+	padding: 5px; 
+	border-radius: 7px; 
+	-moz-border-radius: 7px; 
+	-webkit-border-radius: 7px; 
+	box-shadow: 0px 0px 8px #d9d9d9; 
+	-moz-box-shadow: 0px 0px 8px #d9d9d9; 
+	-webkit-box-shadow: 0px 0px 8px #d9d9d9; 
+}
+.new_game .field input[type='text']:focus { 
+	outline: none; 
+	border: 1px solid  rgba(219,87,5,1); 
+	box-shadow: 0px 0px 8px  rgba(219,87,5,1); 
+	-moz-box-shadow: 0px 0px 8px  rgba(219,87,5,1); 
+	-webkit-box-shadow: 0px 0px 8px  rgba(219,87,5,1); 
+}

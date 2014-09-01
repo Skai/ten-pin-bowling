@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Player Name:</strong>
+  <%= @game.name %>
+</p>
+
+    <%= form_tag @game, :method => :put, :class => "score-calculator"  do %>
+      <table class="calc-score-table">
+        <thead>
+          <tr>
+            <td colspan=2>Frame 1</td>
+            <td colspan=2>Frame 2</td>
+            <td colspan=2>Frame 3</td>
+            <td colspan=2>Frame 4</td>
+            <td colspan=2>Frame 5</td>
+            <td colspan=2>Frame 6</td>
+            <td colspan=2>Frame 7</td>
+            <td colspan=2>Frame 8</td>
+            <td colspan=2>Frame 9</td>
+            <td colspan=3>Frame 10</td>
+            <td>Score</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @game.frames.each_with_index do |frame, index| %>
+              <td class="score">
+                <%= frame.roll1_pins == 10 ? 'X' : frame.roll1_pins  %>
+              </td>
+              <td class="score">
+                <%= (frame.roll1_pins + frame.roll2_pins == 10 && frame.roll2_pins > 0) ? '/' : frame.roll2_pins == 10 ? 'X' : frame.roll2_pins %>
+              </td>
+              <% if 9 === index %>
+                <td class="add score"><%= frame.roll3_pins == 10 ? 'X' : frame.roll3_pins %></td>
+              <% end %>
+            <% end %>
+            <td class="game-result" rowspan="2"><%= @game.score %></td>
+          </tr>
+          <tr>
+            <% @game.frames.each_with_index do |frame, index| %>
+              <td colspan="<%= (9 === index)? 3 : 2 %>" class="frame"><%= frame.score %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+
+      <% unless @game.is_finished %>
+      <div class="calc-buttons-container cfx">
+        <div class="row cfx">
+          <% 10.times do |i| %>
+            <% if (i <= @game.pins_left) %>
+              <input name="pins" type="submit" value="<%= i %>">
+            <% end %>
+          <% end %>
+          <% if @game.current_roll > 1 && @game.pins_left && @game.current_frame != 10 %>
+            <input name="pins" type="submit" value="/">
+          <% end %>
+          <% if @game.current_frame === 10 || @game.current_roll === 1 %>
+            <input name="pins" type="submit" value="X">
+          <% end %>
+        </div>
+        <div class="row cfx">
+          <%= link_to 'Play New Game', new_game_path %>
+        </div>
+      </div>
+      <% else %>
+        <p>Game is finished. Your <strong>score is </strong><%= @game.score %>. See you again!</p>
+      <% end %>
+    <% end %>
+
+<%= link_to '&larr; Back to Games'.html_safe, games_path %>

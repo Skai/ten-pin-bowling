@@ -1,0 +1,31 @@
+<h1>Listing frames</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Is active</th>
+      <th>Roll1 pins</th>
+      <th>Roll2 pins</th>
+      <th>Roll3 pins</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @frames.each do |frame| %>
+      <tr>
+        <td><%= frame.is_active %></td>
+        <td><%= frame.roll1_pins %></td>
+        <td><%= frame.roll2_pins %></td>
+        <td><%= frame.roll3_pins %></td>
+        <td><%= link_to 'Show', frame %></td>
+        <td><%= link_to 'Edit', edit_frame_path(frame) %></td>
+        <td><%= link_to 'Destroy', frame, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Frame', new_frame_path %>

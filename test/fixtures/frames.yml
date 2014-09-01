@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_active: false
+  roll1_pins: 1
+  roll2_pins: 1
+  roll3_pins: 1
+
+two:
+  is_active: false
+  roll1_pins: 1
+  roll2_pins: 1
+  roll3_pins: 1

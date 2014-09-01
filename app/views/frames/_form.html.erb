@@ -1,0 +1,33 @@
+<%= form_for(@frame) do |f| %>
+  <% if @frame.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@frame.errors.count, "error") %> prohibited this frame from being saved:</h2>
+
+      <ul>
+      <% @frame.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :is_active %><br>
+    <%= f.check_box :is_active %>
+  </div>
+  <div class="field">
+    <%= f.label :roll1_pins %><br>
+    <%= f.number_field :roll1_pins %>
+  </div>
+  <div class="field">
+    <%= f.label :roll2_pins %><br>
+    <%= f.number_field :roll2_pins %>
+  </div>
+  <div class="field">
+    <%= f.label :roll3_pins %><br>
+    <%= f.number_field :roll3_pins %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

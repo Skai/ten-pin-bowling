@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @frame.is_active %>
+</p>
+
+<p>
+  <strong>Roll1 pins:</strong>
+  <%= @frame.roll1_pins %>
+</p>
+
+<p>
+  <strong>Roll2 pins:</strong>
+  <%= @frame.roll2_pins %>
+</p>
+
+<p>
+  <strong>Roll3 pins:</strong>
+  <%= @frame.roll3_pins %>
+</p>
+
+<%= link_to 'Edit', edit_frame_path(@frame) %> |
+<%= link_to 'Back', frames_path %>
